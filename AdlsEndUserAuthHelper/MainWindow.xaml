@@ -1,0 +1,42 @@
+﻿<Window x:Class="AdlsEndUserAuthHelper.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AdlsEndUserAuthHelper"
+        mc:Ignorable="d"
+        Title="Azure Active Directory - Big Data Configuration Helper" Height="600" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="120" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="50" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30" />
+            <RowDefinition Height="30" />
+            <RowDefinition Height="30" />
+            <RowDefinition Height="30" />
+            <RowDefinition Height="30" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="35" />
+        </Grid.RowDefinitions>
+
+        <Label Grid.Column="0" Grid.Row="0" VerticalAlignment="Center">Tenant ID</Label>
+        <Label Grid.Column="0" Grid.Row="1" VerticalAlignment="Center">Client ID</Label>
+        <Label Grid.Column="0" Grid.Row="2" VerticalAlignment="Center">Disable SSO</Label>
+        <Label Grid.Column="0" Grid.Row="3" VerticalAlignment="Center">Access Token</Label>
+        <Label Grid.Column="0" Grid.Row="4" VerticalAlignment="Center">Refresh Token</Label>
+        <Label Grid.Column="0" Grid.Row="5" VerticalAlignment="Top">Spark Configuration</Label>
+        <TextBox x:Name="TenantIdTextBox" Grid.Column="1" Grid.Row="0" Margin="5" TextWrapping="Wrap" />
+        <TextBox x:Name="ClientIdTextBox" Grid.Column="1" Grid.Row="1" Margin="5" TextWrapping="Wrap" />
+        <CheckBox x:Name="DisableSso" Grid.Column="1" Margin="5" Grid.Row="2" VerticalAlignment="Center"/>
+        <TextBox x:Name="AccessTokenTextBox" Grid.Column="1" Grid.Row="3" Margin="5" TextWrapping="NoWrap" IsReadOnly="True" />
+        <Button Content="Copy" Grid.Column="2" Grid.Row="3" Margin="5" HorizontalAlignment="Right" Width="40" Click="CopyAccessToken_Click" />
+        <TextBox x:Name="RefreshTokenTextBox" Grid.Column="1" Grid.Row="4" Margin="5" TextWrapping="NoWrap" IsReadOnly="True" />
+        <Button Content="Copy" Grid.Column="2" Grid.Row="4" Margin="5" HorizontalAlignment="Right" Width="40" Click="CopyRefreshToken_Click" />
+        <TextBox x:Name="SparkConfTextBox" Grid.Column="1" Grid.Row="5" Margin="5" TextWrapping="NoWrap" IsReadOnly="True" />
+        <Button Content="Copy" Grid.Column="2" Grid.Row="5" Margin="5" HorizontalAlignment="Right" Width="40" Height="20" VerticalAlignment="Top"  Click="CopySparkConf_Click" />
+        <Button Content="Authenticate" Grid.Column="0" Grid.Row="6" Grid.ColumnSpan="2" Click="Button_Click" Margin="5" HorizontalAlignment="Right" Width="90"/>
+    </Grid>
+</Window>
